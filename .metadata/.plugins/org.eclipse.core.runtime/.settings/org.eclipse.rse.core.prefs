@@ -1,3 +1,4 @@
 activeuserprofiles=Pisal-PC;Team
 eclipse.preferences.version=1
 org.eclipse.rse.systemtype.local.systemType.defaultUserId=Pisal
+useridperkey=Pisal-PC.Local\=Pisal;
