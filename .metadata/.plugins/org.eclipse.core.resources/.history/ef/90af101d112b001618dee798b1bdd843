@@ -1,0 +1,63 @@
+package Browser;
+
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import branch.IBrowser;
+import utilities.Logger;
+
+public class mybrowser implements IBrowser {
+
+	@Override
+	public Document getDocument(String URL, int timeout) {
+		// TODO Auto-generated method stub
+		try {
+			return Jsoup.connect(URL).timeout(timeout).get();
+		} catch (Exception e) {
+			// TODO: handle exception
+			Logger.writeLogException(e, "getDocument", this.toString());
+		}
+		return null;
+	}
+
+	@Override
+	public Document getDocumentBrowser(String URL, int timeout, String useragent, boolean ignoreContentype,
+			boolean isRedirect) {
+		// TODO Auto-generated method stub
+		try {
+			return Jsoup.connect(URL).userAgent(useragent).ignoreContentType(ignoreContentype)
+					.followRedirects(isRedirect).timeout(timeout).get();
+		} catch (Exception e) {
+			// TODO: handle exception
+			Logger.writeLogException(e, "getDocument", this.toString());
+		}
+		return null;
+	}
+	
+	public static String StringGrap(String sources,String from,String to,int firstindex, int lastindex){
+		String result;
+		String start="/course";
+		String end="rn/";
+		String pattern=start+"(.+?)"+end;
+		Pattern p=Pattern.compile(pattern);
+		Matcher m=p.matcher(sources);
+		if(m.find()){
+			System.out.println(m.group(0));
+		}
+		/*if (firstindex>0 && lastindex>0){
+			result= sources.substring(sources.indexOf(from)+firstindex,sources.indexOf(to)+lastindex);
+		}else if(firstindex>0){
+			result= sources.substring(sources.indexOf(from)+firstindex,sources.indexOf(to));
+		}else if(lastindex>0){
+			result= sources.substring(sources.indexOf(from),sources.indexOf(to)+lastindex);
+		}else{
+			result= sources.substring(sources.indexOf(from),sources.indexOf(to));
+		}*/
+		return result;
+	}
+}

@@ -1,0 +1,44 @@
+package Model;
+
+import java.util.concurrent.SynchronousQueue;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import Browser.mybrowser;
+import utilities.Logger;
+
+public class kaymu extends mybrowser {
+	public static void main(String[] args) {
+		try {
+			/*Document doc = Jsoup.connect("http://www.memrise.com/course/115/korean-alphabet/1/garden/learn/")
+					.timeout(5000)
+					.get();
+			System.out.println(doc.);*/
+			String a="http://www.memrise.com/course/115/korean-alphabet/1/garden/learn/";
+			//String s =StringGrap(a, "com/", "/", 1, 1);
+			String pattern="(^C)";
+			Pattern r=Pattern.compile(pattern);
+			Matcher m=r.matcher(a);
+			if (m.find()) {
+				System.out.println("G1 "+ m.group(0));
+				System.out.println("G2 "+ m.group(1));
+				System.out.println("G3 "+ m.group(2));
+			}
+			/*String from="com/";
+			System.out.println(a.substring(a.indexOf(from)+from.length()-1,a.length())); // from to end
+			String bgin="com/";
+			String end="1";
+			System.out.println(a.indexOf(end));
+			System.out.println(a.substring(a.indexOf(bgin),a.indexOf(end)));*/
+			//System.out.println(s);
+		} catch (Exception e) {
+			// TODO: handle exception
+			//Logger.writeLogException(e, "A", "B");
+		}
+	}
+}

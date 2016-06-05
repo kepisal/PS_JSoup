@@ -1,0 +1,18 @@
+package Model;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import Browser.mybrowser;
+
+public class kaymu extends mybrowser {
+	public static void main(String[] args) {
+		System.out.println(new kaymu().StringGrap("h23456789b", "h", "b", 1));
+		String A="A234567890B";
+		System.out.println(A.indexOf("A"));
+		System.out.println(A.indexOf("B"));
+		System.out.println(A.subSequence(A.indexOf("A")+1, A.indexOf("B")));
+	}
+}

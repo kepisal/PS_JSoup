@@ -10,7 +10,7 @@ public class Logger {
 	private static Logger logger = null;
 	public static String logFileName = "article.log";
 	public static String errorLogFileName = "error.log";
-	private static String path;
+	private static String path =System.getProperty("user.dir");
 
 	private Logger() {
 	}
@@ -106,7 +106,7 @@ public class Logger {
 /*	public static void main(String args[]) {
 
 		try {
-			setPath(System.getProperty("user.dir"));
+			
 			
 			System.out.println(1221);
 			

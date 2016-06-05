@@ -1,0 +1,19 @@
+package Model;
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import Browser.mybrowser;
+
+public class kaymu extends mybrowser {
+	public static void main(String[] args) {
+		String A="https://www.google.com.kh/?gws_rd=cr,ssl&ei=tRIQVaatAqasmAX5ooCADw";
+		//System.out.println(new kaymu().StringGrap(url, "/?", "w", 1));
+		//String A="A234567890B";
+		System.out.println(A.indexOf("/?"));
+		System.out.println(A.indexOf("Dw"));
+		System.out.println(A.subSequence(A.indexOf("/?"), A.indexOf("Dw")+2));
+	}
+}
