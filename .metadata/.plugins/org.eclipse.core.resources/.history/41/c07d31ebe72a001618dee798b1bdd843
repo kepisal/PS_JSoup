@@ -1,0 +1,9 @@
+package Model;
+
+import Browser.mybrowser;
+
+public class kaymu extends mybrowser {
+	public void setDocument(){
+		
+	}
+}

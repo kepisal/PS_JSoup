@@ -1,0 +1,13 @@
+package Model;
+
+import Browser.mybrowser;
+
+public class kaymu extends mybrowser {
+
+	@Override
+	public void setDocument() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

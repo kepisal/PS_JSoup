@@ -1,0 +1,20 @@
+package Browser;
+
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+public abstract class mybrowser {
+	
+	
+	
+	
+	
+	
+	public abstract String getTitle();
+	public abstract String getURL();
+	public abstract String getURI();
+	public abstract Elements getElements();
+	public abstract void getElementsBy();
+	public abstract void getPages();
+	
+}
