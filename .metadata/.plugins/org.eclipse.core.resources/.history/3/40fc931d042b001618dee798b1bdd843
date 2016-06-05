@@ -1,0 +1,67 @@
+package Browser;
+
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import branch.IBrowser;
+
+public class mybrowser implements IBrowser{
+	private Document my_document=null;
+	
+	@Override
+	public Document getDocument(String URL, int timeout) {
+		// TODO Auto-generated method stub
+		try {
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			
+		}
+		return null;
+	}
+
+	@Override
+	public Document getDocumentBrowser(String URL, int timeout, String useragent, boolean ignoreContentype,
+			boolean isRedirect) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getTitle() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getURL() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public String getURI() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Elements getElements() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public Element getElementsBy(String element) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void getPages() {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

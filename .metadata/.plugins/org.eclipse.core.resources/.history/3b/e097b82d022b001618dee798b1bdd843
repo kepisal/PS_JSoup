@@ -1,0 +1,12 @@
+package Browser;
+
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import branch.IBrowser;
+
+public class mybrowser implements IBrowser
+{
+	
+}

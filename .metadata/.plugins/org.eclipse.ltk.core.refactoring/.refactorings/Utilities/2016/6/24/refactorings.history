@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Logger.java&apos; to &apos;PsanetJsoup/src/utilities&apos;&#x0D;&#x0A;- Original project: &apos;Utilities&apos;&#x0D;&#x0A;- Destination element: &apos;PsanetJsoup/src/utilities&apos;&#x0D;&#x0A;- Original element: &apos;Log.Logger.java&apos;" description="Copy compilation unit" destination="=PsanetJsoup/src&lt;utilities" element1="/src&lt;Log{Logger.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1465120663638" units="1" version="1.0"/>
+</session>
