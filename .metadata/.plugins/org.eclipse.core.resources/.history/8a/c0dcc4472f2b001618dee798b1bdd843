@@ -1,0 +1,7 @@
+package Model;
+
+public class MainCategories {
+	private String link;
+	private int id;
+	private String name;
+}

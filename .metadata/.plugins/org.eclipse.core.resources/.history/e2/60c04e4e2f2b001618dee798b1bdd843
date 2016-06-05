@@ -1,0 +1,10 @@
+package Model;
+
+import java.io.Serializable;
+
+public class MainCategories implements Serializable {
+	private String link;
+	private int id;
+	private String name;
+	
+}
