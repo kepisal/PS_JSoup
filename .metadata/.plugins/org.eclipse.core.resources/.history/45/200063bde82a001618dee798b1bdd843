@@ -1,5 +1,0 @@
-package Browser;
-
-public abstract class mybrowser {
-	public abstract void setDocument();
-}
