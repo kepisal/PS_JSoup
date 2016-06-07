@@ -26,3 +26,4 @@
 07/06/2016 18:33:01:	org.json.JSONException: JSONObject["isOtherCategories"] not found. in METHOD "A" CLASS "B"
 07/06/2016 18:33:24:	org.json.JSONException: JSONObject["isOtherCategories"] not found. in METHOD "A" CLASS "B"
 07/06/2016 18:33:31:	org.json.JSONException: JSONObject["isOtherCategories"] not found. in METHOD "A" CLASS "B"
+07/06/2016 21:14:21:	org.json.JSONException: JSONObject["isOtherCategories"] not found. in METHOD "A" CLASS "B"
