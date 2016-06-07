@@ -4,9 +4,9 @@ import java.sql.*;
 public class DatabaseConnection {
 	private static String DRIVER_NAME = "org.postgresql.Driver";
 	//private static String URL = "jdbc:postgresql://localhost:";
-	private static String URL = "jdbc:postgresql://192.168.178.155:";
-	private static String PORT_NUMBER = "5432";
-	private static String DB_NAME = "newsmanagement";
+	private static String URL = "jdbc:postgresql://192.168.178.102:";
+	private static String PORT_NUMBER = "5433";
+	private static String DB_NAME = "phsanetDB";
 	private static String USER_NAME = "postgres";
 	private static String PASSWORD = "0231";
 	//private static String PASSWORD = "123";
@@ -78,5 +78,8 @@ public class DatabaseConnection {
 	
 	public static void setPASSWORD(String pASSWORD) {
 		PASSWORD = pASSWORD;
+	}
+	public static void main(String[] args) throws ClassNotFoundException, SQLException {
+		System.out.println(DatabaseConnection.getConnection().getMetaData().getDatabaseProductName());
 	}
 }
