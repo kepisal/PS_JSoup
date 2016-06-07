@@ -129,7 +129,7 @@ public class kaymu extends mybrowser {
 				JSONObject jsonObj = array.getJSONObject(i);
 				// System.out.println(jsonObj.getString("link"));
 				// System.out.println(jsonObj.getString("id"));
-				//System.err.println("["+i+"]"+jsonObj.getString("isOtherCategories"));
+				System.err.println("["+i+"]"+jsonObj.getString("isOtherCategories"));
 				
 				JSONArray child = jsonObj.getJSONArray("children");
 				for (int j = 0; j < child.length(); j++) {

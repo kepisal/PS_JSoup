@@ -121,19 +121,20 @@ public class kaymu extends mybrowser {
 				data += element;
 			}
 			data = StringGrap(data, "categoryData = ", ";");
-			
+			System.err.println(data);
 			data = subString(data, "[{", "];");
-			System.out.println(data);
+
 			JSONArray array = kaymuobj.getJsonArray(data);
+			
 			for (int i = 0; i < array.length(); i++) {
 				JSONObject jsonObj = array.getJSONObject(i);
 				// System.out.println(jsonObj.getString("link"));
 				// System.out.println(jsonObj.getString("id"));
-				//System.err.println("["+i+"]"+jsonObj.getString("isOtherCategories"));
-				
+				System.err.println("["+i+"]"+jsonObj.getString("name"));
+				System.err.println("["+i+"]"+jsonObj.getString("name"));
 				JSONArray child = jsonObj.getJSONArray("children");
 				for (int j = 0; j < child.length(); j++) {
-					System.out.println(child.getJSONObject(j).getString("isOtherCategories"));
+					System.out.println(child.getJSONObject(j).getString("name"));
 				}
 				System.out.println("------------");
 
