@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="org.jsoup.nodes.Element"/>
 <fullyQualifiedTypeName name="branch.IBrowser"/>
-<fullyQualifiedTypeName name="java.util.concurrent.SynchronousQueue"/>
 <fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="java.util.regex.Matcher"/>
 <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
@@ -12,23 +10,27 @@
 <fullyQualifiedTypeName name="Browser.mybrowser"/>
 <fullyQualifiedTypeName name="utilities.Logger"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
-<fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="utilities.Convertor"/>
 <fullyQualifiedTypeName name="com.google.gson.JsonObject"/>
 <fullyQualifiedTypeName name="bsh.Parser"/>
 <fullyQualifiedTypeName name="com.google.gson.JsonParser"/>
-<fullyQualifiedTypeName name="org.json.JSONObject"/>
-<fullyQualifiedTypeName name="org.json.JSONArray"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
 <fullyQualifiedTypeName name="java.lang.Object"/>
 <fullyQualifiedTypeName name="java.io.BufferedReader"/>
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="Model.MainCategories"/>
-<fullyQualifiedTypeName name="Model.kaymu"/>
 <fullyQualifiedTypeName name="org.jsoup.nodes.Document"/>
 <fullyQualifiedTypeName name="org.jsoup.Jsoup"/>
 <fullyQualifiedTypeName name="org.jsoup.select.Elements"/>
 <fullyQualifiedTypeName name="ConnectionDB.DatabaseConnection"/>
+<fullyQualifiedTypeName name="org.jsoup.nodes.Element"/>
+<fullyQualifiedTypeName name="Model.kaymu"/>
+<fullyQualifiedTypeName name="java.lang.String"/>
+<fullyQualifiedTypeName name="java.util.concurrent.SynchronousQueue"/>
+<fullyQualifiedTypeName name="org.testng.reporters.jq.Main"/>
+<fullyQualifiedTypeName name="Model.MainCategories"/>
+<fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="org.json.JSONObject"/>
+<fullyQualifiedTypeName name="org.json.JSONArray"/>
 </qualifiedTypeNameHistroy>

@@ -3,3 +3,17 @@
 05/06/2016 23:20:33:	org.json.JSONException: A JSONObject text must begin with '{' at 1 [character 2 line 1] in METHOD "A" CLASS "B"
 05/06/2016 23:20:52:	org.json.JSONException: A JSONObject text must begin with '{' at 1 [character 2 line 1] in METHOD "A" CLASS "B"
 05/06/2016 23:21:07:	org.json.JSONException: A JSONObject text must begin with '{' at 1 [character 2 line 1] in METHOD "A" CLASS "B"
+07/06/2016 13:46:26:	java.util.regex.PatternSyntaxException: Unclosed character class near index 7
+[{(.+?);
+       ^ in METHOD "A" CLASS "B"
+07/06/2016 13:49:29:	java.lang.StringIndexOutOfBoundsException: String index out of range: -16 in METHOD "A" CLASS "B"
+07/06/2016 14:11:32:	org.json.JSONException: JSONObject["link"] not found. in METHOD "A" CLASS "B"
+07/06/2016 14:12:11:	org.json.JSONException: JSONObject["link"] not found. in METHOD "A" CLASS "B"
+07/06/2016 14:14:21:	org.json.JSONException: JSONObject["link"] not found. in METHOD "A" CLASS "B"
+07/06/2016 14:14:28:	org.json.JSONException: JSONArray[0] is not a JSONObject. in METHOD "A" CLASS "B"
+07/06/2016 14:57:15:	org.json.JSONException: JSONArray[0] is not a JSONObject. in METHOD "A" CLASS "B"
+07/06/2016 14:57:49:	org.json.JSONException: JSONArray[0] is not a JSONObject. in METHOD "A" CLASS "B"
+07/06/2016 14:58:30:	org.json.JSONException: JSONArray[0] is not a JSONObject. in METHOD "A" CLASS "B"
+07/06/2016 14:58:58:	org.json.JSONException: JSONArray[0] is not a JSONObject. in METHOD "A" CLASS "B"
+07/06/2016 15:00:37:	org.json.JSONException: JSONArray[0] is not a JSONObject. in METHOD "A" CLASS "B"
+07/06/2016 15:01:18:	org.json.JSONException: JSONArray[0] is not a JSONObject. in METHOD "A" CLASS "B"

@@ -63,4 +63,7 @@ public class mybrowser{
 		}
 		return tagValue;		
 	}
+	public static String subString(String data,String begin, String end){		
+		return data.substring(data.indexOf(begin), data.indexOf(end)+end.length());
+	}
 }
