@@ -1,0 +1,54 @@
+package Model;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.concurrent.SynchronousQueue;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import Browser.mybrowser;
+import bsh.Parser;
+import utilities.Convertor;
+import utilities.Logger;
+
+public class kaymu extends mybrowser {		
+	private Document kaymu_document=null;
+	
+	
+	public Elements getScript(){
+		Elements result=null;
+		if (document != null){
+			result = document.getElementsByTag("script");
+		}		
+		return result; 
+	}
+	
+	
+	public static void main(String[] args) {
+		try {
+			/*String source = null;
+			kaymu k = new kaymu();
+			document = k.getDocument("http://www.kaymu.com.kh", 10000);
+			System.out.println(document.select("div#main-categories-tree"));*/
+						
+		} catch (Exception e) {
+			// TODO: handle exception
+			Logger.writeLogException(e, "A", "B");
+		}
+	}
+}

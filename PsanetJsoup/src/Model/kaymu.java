@@ -27,11 +27,49 @@ import utilities.Convertor;
 import utilities.Logger;
 
 public class kaymu extends mybrowser {		
+	private Document kaymu_document=null;
+	private ArrayList<MainCategories> maincategory_array=null;
+	private Elements kaymu_body=null;
+	private Element kaymu_element=null;
+	
+	public kaymu(String URL, int timeout){
+		kaymu_document = super.getDocument(URL, timeout);
+	}
+	public Document resetDocument(String URL, int timeout,String useragent, boolean ignoreContentype, boolean isRedirect){
+		if (kaymu_document!=null){
+			kaymu_document = super.getDocumentBrowser(URL, timeout, useragent, ignoreContentype, isRedirect);
+		}
+		return kaymu_document;
+	}
+	public Elements getAllElement(String Tag){
+		Elements result=null;
+		if (kaymu_document != null){
+			result = kaymu_document.getAllElements();
+		}		
+		return result; 
+	}
+	
+	
+	public Elements getClass(String className){
+		Elements result=null;
+		if (kaymu_document != null){
+			result = kaymu_document.getElementsByClass(className);
+		}		
+		return result; 
+	}
+	
+	public Elements getTag(String Tag){
+		Elements result=null;
+		if (kaymu_document != null){
+			result = kaymu_document.getElementsByTag(Tag);
+		}		
+		return result; 
+	}
 	
 	public Elements getScript(){
 		Elements result=null;
-		if (document != null){
-			result = document.getElementsByTag("script");
+		if (kaymu_document != null){
+			result = kaymu_document.getElementsByTag("script");
 		}		
 		return result; 
 	}
@@ -39,11 +77,9 @@ public class kaymu extends mybrowser {
 	
 	public static void main(String[] args) {
 		try {
-			String source = null;
-			kaymu k = new kaymu();
-			document = k.getDocument("http://www.kaymu.com.kh", 10000);
-			System.out.println(document.select("div#main-categories-tree"));
-						
+			Document doc = Jsoup.connect("http://www.kaymu.com.kh/").timeout(10000).get();
+			Elements ele = doc.select("body");
+			System.out.println(ele);
 		} catch (Exception e) {
 			// TODO: handle exception
 			Logger.writeLogException(e, "A", "B");

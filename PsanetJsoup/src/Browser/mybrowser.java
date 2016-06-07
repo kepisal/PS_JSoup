@@ -13,13 +13,12 @@ import org.jsoup.select.Elements;
 import branch.IBrowser;
 import utilities.Logger;
 
-public class mybrowser implements IBrowser {
+public class mybrowser{
 	public static Document document=null; 
 	private String URL;
 	private String useragent;
 	private boolean isRedirect, ignoreContentType;
 		
-	@Override
 	public Document getDocument(String URL, int timeout) {
 		// TODO Auto-generated method stub
 		try {
@@ -31,7 +30,6 @@ public class mybrowser implements IBrowser {
 		return null;
 	}
 
-	@Override
 	public Document getDocumentBrowser(String URL, int timeout, String useragent, boolean ignoreContentype,
 			boolean isRedirect) {
 		// TODO Auto-generated method stub
