@@ -21,6 +21,7 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 import org.testng.reporters.jq.Main;
 
+import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 
@@ -31,14 +32,14 @@ import utilities.Logger;
 
 public class kaymu extends mybrowser {
 	private Document kaymu_document = null;
-	private ArrayList<MainCategories> maincategory_array = null;
+	private JSONArray category_Jsonarray = null;
 	private Elements kaymu_body = null;
 	private Element kaymu_element = null;
-	private String URL="http://www.kaymu.com.kh/";
-	private int timeout=1000;
-	private JSONArray array=null;
-	
-	public JSONArray getJsonArray(String jsondata){
+	private String URL = "http://www.kaymu.com.kh/";
+	private int timeout = 1000;
+	private JSONArray array = null;
+
+	public JSONArray getJsonArray(String jsondata) {
 		try {
 			array = new JSONArray(jsondata);
 		} catch (JSONException e) {
@@ -47,6 +48,7 @@ public class kaymu extends mybrowser {
 		}
 		return array;
 	}
+
 	public String getURL() {
 		return URL;
 	}
@@ -107,38 +109,84 @@ public class kaymu extends mybrowser {
 		return result;
 	}
 
-	public ArrayList<MainCategories> getListMainCategories() {
-		ArrayList<MainCategories> maincategory = new ArrayList<MainCategories>();
-		
-		return null;
+	public String categoriesData() {
+		String data = null;
+		for (Element element : this.getScript()) {
+			data += element;
+		}
+		data = subString(StringGrap(data, "categoryData = ", ";"), "[{", "];");
+		return data;
+	}
+
+	public ArrayList<Categories> getListCategories() {
+		ArrayList<Categories> arraylist_category = new ArrayList<Categories>();
+		JSONObject jsonObj1, jsonObj2, jsonObj3, jsonObj4 = null;
+		JSONArray listcategory_jsonarray = null;
+		JSONArray listsubcategory_jsonarray = null;
+		JSONArray listsubcategory_jsonarray1 = null;
+		JSONArray listcategory = null;
+		try {
+			category_Jsonarray = this.getJsonArray(this.categoriesData());
+			int main = 0, main1 = 0, cat = 0, cat1 = 0, sub = 0, sub1 = 0;
+			int j = 0;
+			for (int i = 0; i < category_Jsonarray.length(); i++) {
+				if (category_Jsonarray.getJSONObject(i).has("children")) {
+					jsonObj1 = category_Jsonarray.getJSONObject(i);
+					listcategory = jsonObj1.getJSONArray("children");
+					main++; // Main Categories
+
+					for (int ii = 0; ii < listcategory.length(); ii++) {
+						if (listcategory.getJSONObject(ii).has("children")) {
+							jsonObj2 = listcategory.getJSONObject(ii);
+							listsubcategory_jsonarray = jsonObj2.getJSONArray("children");
+
+							cat++; // Categories
+							for (int k = 0; k < listsubcategory_jsonarray.length(); k++) {
+								if (listsubcategory_jsonarray.getJSONObject(k).has("children")) {
+									sub++; // Sub Categories
+									jsonObj3 = listsubcategory_jsonarray.getJSONObject(k);
+									System.out.println(jsonObj3.getString("name"));
+								} else {
+									sub1++;
+									jsonObj3 = listsubcategory_jsonarray.getJSONObject(k);
+									System.out.println(jsonObj3.getString("name"));
+								}
+								System.out.println("+++++++++++++++++++++SubCategory["+k+"]+++++++++++++++++++++");
+							}
+						} else {
+							cat1++;
+
+						}
+						System.out.println("+++++++++++++++++++++Category["+ii+"]+++++++++++++++++++++");
+					}
+				} else {
+					main1++;
+				}
+				System.out.println("+++++++++++++++++++++Main Category["+i+"]+++++++++++++++++++++\n\n\n");
+			}
+
+			System.out.println("MainCategory has children " + main);
+			System.out.println("MainCategory hasn't children " + main1);
+			System.out.println("Category has children " + cat);
+			System.out.println("Category hasn't children " + cat1);
+			System.out.println("Subcategory has children " + sub);
+			System.out.println("Subcategory hasn't children " + sub1);
+		} catch (Exception e) {
+			// TODO: handle exception
+			Logger.writeLogException(e, "getlistCategory", kaymu.class.getName());
+		}
+		return arraylist_category;
 	}
 
 	public static void main(String[] args) {
 		String data = null;
 		try {
 			kaymu kaymuobj = new kaymu();
-			for (Element element : kaymuobj.getScript()) {
-				data += element;
-			}
-			data = StringGrap(data, "categoryData = ", ";");
-			
-			data = subString(data, "[{", "];");
-			System.out.println(data);
-			JSONArray array = kaymuobj.getJsonArray(data);
-			for (int i = 0; i < array.length(); i++) {
-				JSONObject jsonObj = array.getJSONObject(i);
-				// System.out.println(jsonObj.getString("link"));
-				// System.out.println(jsonObj.getString("id"));
-				//System.err.println("["+i+"]"+jsonObj.getString("isOtherCategories"));
-				
-				JSONArray child = jsonObj.getJSONArray("children");
-				for (int j = 0; j < child.length(); j++) {
-					System.out.println(child.getJSONObject(j).getString("isOtherCategories"));
-				}
-				System.out.println("------------");
-
-			}
-
+			kaymuobj.getListCategories();
+			/*
+			 * for (Categories el : kaymuobj.getListCategories()) {
+			 * System.out.println(el); }
+			 */
 		} catch (Exception e) {
 			// TODO: handle exception
 			Logger.writeLogException(e, "A", "B");

@@ -8,10 +8,8 @@
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
 <fullyQualifiedTypeName name="java.io.File"/>
 <fullyQualifiedTypeName name="Browser.mybrowser"/>
-<fullyQualifiedTypeName name="utilities.Logger"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="utilities.Convertor"/>
-<fullyQualifiedTypeName name="com.google.gson.JsonObject"/>
 <fullyQualifiedTypeName name="bsh.Parser"/>
 <fullyQualifiedTypeName name="com.google.gson.JsonParser"/>
 <fullyQualifiedTypeName name="java.util.Iterator"/>
@@ -25,12 +23,17 @@
 <fullyQualifiedTypeName name="org.jsoup.select.Elements"/>
 <fullyQualifiedTypeName name="ConnectionDB.DatabaseConnection"/>
 <fullyQualifiedTypeName name="org.jsoup.nodes.Element"/>
-<fullyQualifiedTypeName name="Model.kaymu"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.util.concurrent.SynchronousQueue"/>
 <fullyQualifiedTypeName name="org.testng.reporters.jq.Main"/>
 <fullyQualifiedTypeName name="Model.MainCategories"/>
+<fullyQualifiedTypeName name="utilities.Logger"/>
+<fullyQualifiedTypeName name="com.google.gson.JsonObject"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
+<fullyQualifiedTypeName name="Model.Categories"/>
+<fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="org.json.JSONObject"/>
+<fullyQualifiedTypeName name="Model.kaymu"/>
 <fullyQualifiedTypeName name="org.json.JSONArray"/>
+<fullyQualifiedTypeName name="com.google.gson.JsonArray"/>
 </qualifiedTypeNameHistroy>

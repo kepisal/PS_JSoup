@@ -1,0 +1,188 @@
+package Model;
+
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.concurrent.SynchronousQueue;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+import org.testng.reporters.jq.Main;
+
+import com.google.gson.JsonArray;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
+
+import Browser.mybrowser;
+import bsh.Parser;
+import utilities.Convertor;
+import utilities.Logger;
+
+public class kaymu extends mybrowser {
+	private Document kaymu_document = null;
+	private JSONArray category_Jsonarray = null;
+	private Elements kaymu_body = null;
+	private Element kaymu_element = null;
+	private String URL = "http://www.kaymu.com.kh/";
+	private int timeout = 1000;
+	private JSONArray array = null;
+
+	public JSONArray getJsonArray(String jsondata) {
+		try {
+			array = new JSONArray(jsondata);
+		} catch (JSONException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return array;
+	}
+
+	public String getURL() {
+		return URL;
+	}
+
+	public void setURL(String uRL) {
+		this.URL = uRL;
+	}
+
+	public int getTimeout() {
+		return timeout;
+	}
+
+	public void setTimeout(int timeout) {
+		this.timeout = timeout;
+	}
+
+	public kaymu() {
+		kaymu_document = super.getDocument(URL, timeout);
+	}
+
+	public Document resetDocument(String URL, int timeout, String useragent, boolean ignoreContentype,
+			boolean isRedirect) {
+		if (kaymu_document != null) {
+			kaymu_document = super.getDocumentBrowser(URL, timeout, useragent, ignoreContentype, isRedirect);
+		}
+		return kaymu_document;
+	}
+
+	public Elements getAllElement(String Tag) {
+		Elements result = null;
+		if (kaymu_document != null) {
+			result = kaymu_document.getAllElements();
+		}
+		return result;
+	}
+
+	public Elements getClass(String className) {
+		Elements result = null;
+		if (kaymu_document != null) {
+			result = kaymu_document.getElementsByClass(className);
+		}
+		return result;
+	}
+
+	public Elements getTag(String Tag) {
+		Elements result = null;
+		if (kaymu_document != null) {
+			result = kaymu_document.getElementsByTag(Tag);
+		}
+		return result;
+	}
+
+	public Elements getScript() {
+		Elements result = null;
+		if (kaymu_document != null) {
+			result = kaymu_document.getElementsByTag("script");
+		}
+		return result;
+	}
+
+	public String categoriesData() {
+		String data = null;
+		for (Element element : this.getScript()) {
+			data += element;
+		}
+		data = subString(StringGrap(data, "categoryData = ", ";"), "[{", "];");
+		return data;
+	}
+
+	public ArrayList<Categories> getListCategories() {
+		ArrayList<Categories> arraylist_category = new ArrayList<Categories>();
+		JSONObject jsonObj1, jsonObj2, jsonObj3, jsonObj4 = null;
+		JSONArray listcategory_jsonarray = null;
+		JSONArray listsubcategory_jsonarray = null;
+		JSONArray listsubcategory_jsonarray1 = null;
+		JSONArray listcategory = null;
+		try {
+			category_Jsonarray = this.getJsonArray(this.categoriesData());
+			int main = 0,main1 = 0, cat = 0,cat1 = 0, sub = 0,sub1 = 0;
+			int j = 0;
+			for (int i = 0; i < category_Jsonarray.length(); i++) {
+				if (category_Jsonarray.getJSONObject(i).has("children")) {
+					jsonObj1 = category_Jsonarray.getJSONObject(i);
+					listcategory = jsonObj1.getJSONArray("children");
+					main++; // Main Categories
+					
+					for (int ii = 0; ii < listcategory.length() - 1; ii++) {
+						if (listcategory.getJSONObject(ii).has("children")) {
+							jsonObj2 = listcategory.getJSONObject(ii);
+							listsubcategory_jsonarray = jsonObj2.getJSONArray("children");
+
+							cat++; // Categories
+							for (int k = 0; k < listsubcategory_jsonarray.length() - 1; k++) {
+								if(listsubcategory_jsonarray.getJSONObject(k).has("children")){
+									sub++; // Sub Categories
+								}else{
+									sub1++;
+								}
+							}
+						} else {
+							cat1++;
+							
+						}
+					}
+				} else {
+					main1++;
+				}
+			}
+
+			System.out.println("MainCategory has children " + main);
+			System.out.println("MainCategory hasn't children " + main1);
+			System.out.println("Category has children " + cat);
+			System.out.println("Category hasn't children " + cat1);
+			System.out.println("Subcategory has children " + sub);
+			System.out.println("Subcategory hasn't children " + sub1);
+		} catch (Exception e) {
+			// TODO: handle exception
+			Logger.writeLogException(e, "getlistCategory", kaymu.class.getName());
+		}
+		return arraylist_category;
+	}
+
+	public static void main(String[] args) {
+		String data = null;
+		try {
+			kaymu kaymuobj = new kaymu();
+			kaymuobj.getListCategories();
+			/*
+			 * for (Categories el : kaymuobj.getListCategories()) {
+			 * System.out.println(el); }
+			 */
+		} catch (Exception e) {
+			// TODO: handle exception
+			Logger.writeLogException(e, "A", "B");
+		}
+	}
+}
