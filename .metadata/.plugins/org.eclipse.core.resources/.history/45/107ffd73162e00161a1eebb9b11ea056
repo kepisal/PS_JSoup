@@ -149,8 +149,8 @@ public class kaymu extends mybrowser {
 									break;
 								} else {
 									sub1++;
-									jsonObj3 = listsubcategory_jsonarray.getJSONObject(k);
-									//System.out.println(jsonObj3.getString("name"));
+									/*jsonObj3 = listsubcategory_jsonarray.getJSONObject(k);
+									System.out.println(jsonObj3.getString("name"));*/
 								}
 								System.out.println("+++++++++++++++++++++SubCategory["+k+"]+++++++++++++++++++++");
 							}

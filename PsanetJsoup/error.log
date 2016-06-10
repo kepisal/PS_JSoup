@@ -1,0 +1,4 @@
+09/06/2016 14:27:23:	org.json.JSONException: JSONArray[0] is not a JSONObject. in METHOD "getlistCategory" CLASS "Model.kaymu"
+09/06/2016 14:28:48:	org.json.JSONException: JSONArray[0] is not a JSONObject. in METHOD "getlistCategory" CLASS "Model.kaymu"
+09/06/2016 14:29:11:	org.json.JSONException: JSONArray[0] is not a JSONObject. in METHOD "getlistCategory" CLASS "Model.kaymu"
+09/06/2016 14:47:53:	org.json.JSONException: JSONArray[0] is not a JSONObject. in METHOD "getlistCategory" CLASS "Model.kaymu"
