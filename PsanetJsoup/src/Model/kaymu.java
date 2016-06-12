@@ -120,61 +120,64 @@ public class kaymu extends mybrowser {
 
 	public ArrayList<Categories> getListCategories() {
 		ArrayList<Categories> arraylist_category = new ArrayList<Categories>();
-		JSONObject jsonObj1, jsonObj2, jsonObj3, jsonObj4 = null;
+		JSONObject jsonObj1, jsonObj2 = null, jsonObj3, jsonObj4 = null;
 		JSONArray listcategory_jsonarray = null;
-		JSONArray listsubcategory_jsonarray = null;
-		JSONArray listsubcategory_jsonarray1 = null;
+		JSONArray listLastsubcategory = null;
+		JSONArray listsubcategory= null;
+		JSONArray LastSubCategory=null;
 		JSONArray listcategory = null;
 		try {
-			category_Jsonarray = this.getJsonArray(this.categoriesData());
-			int main = 0, main1 = 0, cat = 0, cat1 = 0, sub = 0, sub1 = 0;
-			int j = 0;
-			for (int i = 0; i < category_Jsonarray.length(); i++) {
-				if (category_Jsonarray.getJSONObject(i).has("children")) {
-					jsonObj1 = category_Jsonarray.getJSONObject(i);
-					listcategory = jsonObj1.getJSONArray("children");
-					main++; // Main Categories
-
-					for (int ii = 0; ii < listcategory.length(); ii++) {
-						if (listcategory.getJSONObject(ii).has("children")) {
-							jsonObj2 = listcategory.getJSONObject(ii);
-							listsubcategory_jsonarray = jsonObj2.getJSONArray("children");
-
-							cat++; // Categories
-							for (int k = 0; k < listsubcategory_jsonarray.length(); k++) {
-								if (listsubcategory_jsonarray.getJSONObject(k).has("children")) {
-									sub++; // Sub Categories
-									jsonObj3 = listsubcategory_jsonarray.getJSONObject(k);
-									System.out.println(jsonObj3.getString("name"));
-									break;
-								} else {
-									sub1++;
-									jsonObj3 = listsubcategory_jsonarray.getJSONObject(k);
-									//System.out.println(jsonObj3.getString("name"));
+			category_Jsonarray = this.getJsonArray(this.categoriesData()); // MainCategory Array
+			
+			for(int i=0; i<category_Jsonarray.length(); i++){
+				JSONObject obj1 = category_Jsonarray.getJSONObject(i); // Get each object in JSONArray
+				System.out.println(obj1.getString("name")); // Output properties value
+				if (obj1.has("children")){
+					listcategory = obj1.getJSONArray("children"); // Category Array
+					//System.out.println("MainCategory "+listcategory);
+					outerloop:
+					for(int j=0; j<listcategory.length()-1; j++){
+						JSONObject obj2 = listcategory.getJSONObject(j); // Get each object in JSONArray
+						System.out.println("Category "+obj2.getString("name")); // Output properties value
+						if(obj2.has("children")){
+							listsubcategory = obj2.getJSONArray("children"); 
+							//System.out.println("Category "+listcategory);// SubCategory Array
+							
+							for(int k=0; k<listsubcategory.length()-1; k++){								
+								JSONObject obj3 = listcategory.getJSONObject(k); // Get each object in JSONArray
+								//System.out.println("SubCategory "+obj3.getString("name")); //
+								if(obj3.has("children")){
+									listLastsubcategory = obj3.getJSONArray("children");
+									//System.out.println("Last SubCategory "+listLastsubcategory);
+									for(int z=0; z<listLastsubcategory.length()-1;z++){
+										JSONObject obj4=listLastsubcategory.getJSONObject(z);
+										if(obj4.has("children")){
+											LastSubCategory = obj4.getJSONArray("children");
+											System.out.println("End SubCategory : "+LastSubCategory);
+											for(int x=0; x<LastSubCategory.length(); x++){
+												JSONObject obj5=LastSubCategory.getJSONObject(x);
+												System.out.println("End Object : "+obj5.getString("name"));
+											}
+											break outerloop;
+										}
+									}
+								}else{
+									break outerloop;
 								}
-								System.out.println("+++++++++++++++++++++SubCategory["+k+"]+++++++++++++++++++++");
+								
 							}
-						} else {
-							cat1++;
-
+						
 						}
-						System.out.println("+++++++++++++++++++++Category["+ii+"]+++++++++++++++++++++");
+						
 					}
-				} else {
-					main1++;
+					
 				}
-				System.out.println("+++++++++++++++++++++Main Category["+i+"]+++++++++++++++++++++\n\n\n");
+				
 			}
-
-			System.out.println("MainCategory has children " + main);
-			System.out.println("MainCategory hasn't children " + main1);
-			System.out.println("Category has children " + cat);
-			System.out.println("Category hasn't children " + cat1);
-			System.out.println("Subcategory has children " + sub);
-			System.out.println("Subcategory hasn't children " + sub1);
 		} catch (Exception e) {
 			// TODO: handle exception
-			Logger.writeLogException(e, "getlistCategory", kaymu.class.getName());
+			e.printStackTrace();
+			//Logger.writeLogException(e, "getlistCategory", kaymu.class.getName());
 		}
 		return arraylist_category;
 	}
