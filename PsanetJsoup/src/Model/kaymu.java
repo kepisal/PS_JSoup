@@ -162,7 +162,7 @@ public class kaymu extends mybrowser {
 										}
 									}
 								}else{
-									break outerloop;
+									//break outerloop;
 								}
 								
 							}

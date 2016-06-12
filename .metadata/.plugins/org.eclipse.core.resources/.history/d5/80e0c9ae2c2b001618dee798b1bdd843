@@ -1,4 +1,0 @@
-05/06/2016 21:48:46:	java.lang.IllegalArgumentException: Malformed URL: htttp://www.kaymu.com.kh in METHOD "getDocument" CLASS "Model.kaymu@372f7a8d"
-05/06/2016 21:48:46:	java.lang.NullPointerException in METHOD "A" CLASS "B"
-05/06/2016 21:49:07:	java.net.SocketTimeoutException: Read timed out in METHOD "getDocument" CLASS "Model.kaymu@279f2327"
-05/06/2016 21:49:07:	java.lang.NullPointerException in METHOD "A" CLASS "B"
