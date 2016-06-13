@@ -1,13 +1,11 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <qualifiedTypeNameHistroy>
-<fullyQualifiedTypeName name="branch.IBrowser"/>
 <fullyQualifiedTypeName name="java.awt.List"/>
 <fullyQualifiedTypeName name="java.util.regex.Matcher"/>
 <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
 <fullyQualifiedTypeName name="java.util.Arrays"/>
 <fullyQualifiedTypeName name="java.io.FileWriter"/>
 <fullyQualifiedTypeName name="java.io.File"/>
-<fullyQualifiedTypeName name="Browser.mybrowser"/>
 <fullyQualifiedTypeName name="java.io.Serializable"/>
 <fullyQualifiedTypeName name="utilities.Convertor"/>
 <fullyQualifiedTypeName name="bsh.Parser"/>
@@ -18,7 +16,6 @@
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="org.jsoup.nodes.Document"/>
 <fullyQualifiedTypeName name="org.jsoup.Jsoup"/>
 <fullyQualifiedTypeName name="org.jsoup.select.Elements"/>
 <fullyQualifiedTypeName name="ConnectionDB.DatabaseConnection"/>
@@ -27,7 +24,6 @@
 <fullyQualifiedTypeName name="java.util.concurrent.SynchronousQueue"/>
 <fullyQualifiedTypeName name="org.testng.reporters.jq.Main"/>
 <fullyQualifiedTypeName name="Model.MainCategories"/>
-<fullyQualifiedTypeName name="utilities.Logger"/>
 <fullyQualifiedTypeName name="com.google.gson.JsonObject"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="Model.Categories"/>
@@ -36,4 +32,12 @@
 <fullyQualifiedTypeName name="Model.kaymu"/>
 <fullyQualifiedTypeName name="org.json.JSONArray"/>
 <fullyQualifiedTypeName name="com.google.gson.JsonArray"/>
+<fullyQualifiedTypeName name="branch.IBrowser"/>
+<fullyQualifiedTypeName name="com.mysql.jdbc.MySQLConnection"/>
+<fullyQualifiedTypeName name="Model.khmer24"/>
+<fullyQualifiedTypeName name="org.jsoup.nodes.Document"/>
+<fullyQualifiedTypeName name="com.mysql.jdbc.log.Log"/>
+<fullyQualifiedTypeName name="utilities.Logger"/>
+<fullyQualifiedTypeName name="Browser.mybrowser"/>
+<fullyQualifiedTypeName name="Model.shop168"/>
 </qualifiedTypeNameHistroy>

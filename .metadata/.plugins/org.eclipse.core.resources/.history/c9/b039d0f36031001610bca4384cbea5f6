@@ -1,0 +1,11 @@
+package Model;
+
+import org.jsoup.nodes.Document;
+
+public class shop168 {
+	private final String hostname = "http://shop168.com.kh/";
+	private Document shop168doc = null;
+	public shop168(){
+		
+	}
+}

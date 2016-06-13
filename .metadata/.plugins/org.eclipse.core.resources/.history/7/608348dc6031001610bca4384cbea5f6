@@ -1,0 +1,5 @@
+package Model;
+
+public class shop168 {
+	private final String hostname = "http://shop168.com.kh/";
+}

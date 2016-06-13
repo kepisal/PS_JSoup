@@ -12,3 +12,6 @@
 12/06/2016 11:44:46:	java.net.UnknownHostException: www.kaymu.com.kh in METHOD "getDocument" CLASS "Model.kaymu@7699a589"
 12/06/2016 11:45:17:	java.net.SocketTimeoutException: Read timed out in METHOD "getDocument" CLASS "Model.kaymu@7699a589"
 12/06/2016 14:35:23:	java.net.SocketTimeoutException: Read timed out in METHOD "getDocument" CLASS "Model.kaymu@378bf509"
+13/06/2016 18:26:46:	org.jsoup.HttpStatusException: HTTP error fetching URL. Status=403, URL=https://www.khmer24.com/ in METHOD "getDocument" CLASS "Model.khmer24@4501b7af"
+13/06/2016 18:27:12:	org.jsoup.HttpStatusException: HTTP error fetching URL. Status=403, URL=https://www.khmer24.com/ in METHOD "getDocument" CLASS "Model.khmer24@4501b7af"
+13/06/2016 19:33:15:	java.net.SocketTimeoutException: Read timed out in METHOD "getDocument" CLASS "Model.shop168@3b07d329"
