@@ -17,9 +17,7 @@
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
 <fullyQualifiedTypeName name="org.jsoup.Jsoup"/>
-<fullyQualifiedTypeName name="org.jsoup.select.Elements"/>
 <fullyQualifiedTypeName name="ConnectionDB.DatabaseConnection"/>
-<fullyQualifiedTypeName name="org.jsoup.nodes.Element"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.util.concurrent.SynchronousQueue"/>
 <fullyQualifiedTypeName name="org.testng.reporters.jq.Main"/>
@@ -40,4 +38,6 @@
 <fullyQualifiedTypeName name="utilities.Logger"/>
 <fullyQualifiedTypeName name="Browser.mybrowser"/>
 <fullyQualifiedTypeName name="Model.shop168"/>
+<fullyQualifiedTypeName name="org.jsoup.nodes.Element"/>
+<fullyQualifiedTypeName name="org.jsoup.select.Elements"/>
 </qualifiedTypeNameHistroy>
