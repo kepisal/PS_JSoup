@@ -27,6 +27,6 @@ public class shop168 extends mybrowser {
 		return getDocumentBrowser(URL, (timeout=timeout<1000?5000:timeout), "Mozilla", true, true);
 	}
 	public static void main(String[] args) {
-		System.out.println(new shop168().getPageShop168().select("head html meta"));
+		System.out.println(new shop168().getPageShop168().title());
 	}
 }
