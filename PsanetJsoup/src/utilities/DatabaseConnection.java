@@ -3,10 +3,10 @@ import java.sql.*;
 
 public class DatabaseConnection {
 	private static String DRIVER_NAME = "org.postgresql.Driver";
-	//private static String URL = "jdbc:postgresql://localhost:";
-	private static String URL = "jdbc:postgresql://192.168.178.102:";
+	private static String URL = "jdbc:postgresql://localhost:";
+	//private static String URL = "jdbc:postgresql://192.168.178.102:";
 	private static String PORT_NUMBER = "5433";
-	private static String DB_NAME = "phsanetDB";
+	private static String DB_NAME = "dbPshanetBackup";
 	private static String USER_NAME = "postgres";
 	private static String PASSWORD = "0231";
 	//private static String PASSWORD = "123";

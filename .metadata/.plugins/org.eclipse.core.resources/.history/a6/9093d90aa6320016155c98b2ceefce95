@@ -1,0 +1,70 @@
+package Model;
+
+import java.util.ArrayList;
+
+import org.jsoup.nodes.Document;
+import org.jsoup.nodes.Element;
+import org.jsoup.select.Elements;
+
+import com.mysql.jdbc.log.Log;
+
+import Browser.mybrowser;
+import utilities.Logger;
+
+public class shop168 extends mybrowser {
+	private final String hostname = "http://shop168.com.kh/";
+	private int timeout = 10000;
+	private Document shop168doc = null;
+
+	public shop168() {
+		try {
+			shop168doc = getDocument(hostname, timeout);
+		} catch (Exception e) {
+			// TODO: handle exception
+			Logger.writeLogException(e, "Constructor", this.getClass().getName());
+		}
+	}
+
+	public Document getPageShop168() {
+		return shop168doc;
+	}
+
+	public Document getPageShop168(String pathURL, int timeout) {
+		String URL = hostname + pathURL;
+		return getDocumentBrowser(URL, (timeout = timeout < 1000 ? 5000 : timeout), "Mozilla", true, true);
+	}
+
+	public static void main(String[] args) {
+		ArrayList<product> productcollection = new ArrayList<product>();
+		product p = new product();
+		try {
+			Elements elements = new shop168().getPageShop168().select("div#products_new");
+			elements = elements.select("div.pin_main_container").select("div table.center-block");
+			// .select("td.product-image");
+
+			for (Element element : elements) {
+				System.out.println(element.select("td.product-image").select("a").attr("href").trim());
+				System.out.println(element.select("td.product-image").select("img").attr("src").trim());
+				System.out.println(element.select("a.product-title").text().trim());
+				System.out.println(element.select("span.price-num").text());
+				System.err.println("------------\n");
+			}
+			// p.setTitle(elements.select("td.product-title-wrap").get(0).text());
+			// p.setTitle(elements.html());
+
+			// p.setImage_link(elements.select(query));
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+		/*
+		 * System.out.println(new
+		 * shop168().getPageShop168("mobiles-and-tablets-kh/mobile-phones-kh/",
+		 * 10000) .select("div.product-info")); Elements elements=new
+		 * shop168().getPageShop168().select("div#products_new"); elements =
+		 * elements.select("div.pin_main_container");
+		 * System.out.println(elements.select(
+		 * "div table.center-block td.product-title-wrap").get(0).text());
+		 */
+	}
+}

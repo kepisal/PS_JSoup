@@ -1,0 +1,8 @@
+package Model;
+
+public class product {
+	private String image_link;
+	private String link;
+	private String price;
+	private String title;
+}
