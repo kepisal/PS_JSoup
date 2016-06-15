@@ -1,0 +1,27 @@
+package Model;
+
+import org.jsoup.Connection;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+public class sabaynews {
+	public static void main(String[] args) {
+		//action=do_action_ajax&do_action=moreposts&term_id=3&term_name=cat&paged=3
+		try {
+			Document doc=Jsoup.connect("http://news.sabay.com.kh/topics/entertainment")
+					.data("action","do_action_ajax")
+					.data("do_action","moreposts")
+					.data("term_id","3")
+					.data("term_name","cat")
+					.data("paged","3")
+					.userAgent("Mozilla")
+					.post();
+			
+			
+			
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+}

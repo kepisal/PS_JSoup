@@ -1,0 +1,32 @@
+package Model;
+
+import org.json.JSONArray;
+import org.jsoup.Connection;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+import com.google.gson.JsonArray;
+
+public class sabaynews {
+	public static void main(String[] args) {
+		//action=do_action_ajax&do_action=moreposts&term_id=3&term_name=cat&paged=3
+		try {
+			Document doc=Jsoup.connect("http://news.sabay.com.kh/wp-content/themes/sabaynews_v9.0.1/ajax.php")
+					.data("action","do_action_ajax")
+					.data("do_action","moreposts")
+					.data("term_id","3")
+					.data("term_name","cat")
+					.data("paged","3")
+					.userAgent("Mozilla")
+					.ignoreContentType(true)
+					.followRedirects(true)
+					.post();
+			String jsondata = doc.body().text();
+			JSONArray jsonarray=new JSONArray(jsondata);
+			System.out.println(jsonarray.length());
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+}

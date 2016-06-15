@@ -1,0 +1,35 @@
+package Model;
+
+import org.jsoup.Connection;
+import org.jsoup.Jsoup;
+import org.jsoup.nodes.Document;
+
+public class sabaynews {
+	public static void main(String[] args) {
+		//action=do_action_ajax&do_action=moreposts&term_id=3&term_name=cat&paged=3
+		try {
+			/*Document doc=Jsoup.connect("http://news.sabay.com.kh/wp-content/themes/sabaynews_v9.0.1/ajax.php")
+					.data("action","do_action_ajax")
+					.data("do_action","moreposts")
+					.data("term_id","3")
+					.data("term_name","cat")
+					.data("paged","3")
+					.userAgent("Mozilla")
+					.ignoreContentType(true)
+					.followRedirects(true)
+					.post();
+			System.out.println(doc);*/
+			String Json = Jsoup.connect("http://news.sabay.com.kh/wp-content")
+                    .timeout(1000000) 
+                    .header("Accept", "text/javascript")
+                    .userAgent("Mozilla/5.0 (Windows NT 6.1; rv:40.0) Gecko/20100101 Firefox/40.0")
+                    .get()
+                    .body()
+                    .text();
+			System.out.println(Json);
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+	}
+}

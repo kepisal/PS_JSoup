@@ -16,7 +16,6 @@
 <fullyQualifiedTypeName name="java.io.IOException"/>
 <fullyQualifiedTypeName name="java.io.FileReader"/>
 <fullyQualifiedTypeName name="java.lang.System"/>
-<fullyQualifiedTypeName name="org.jsoup.Jsoup"/>
 <fullyQualifiedTypeName name="ConnectionDB.DatabaseConnection"/>
 <fullyQualifiedTypeName name="java.lang.String"/>
 <fullyQualifiedTypeName name="java.util.concurrent.SynchronousQueue"/>
@@ -24,14 +23,10 @@
 <fullyQualifiedTypeName name="Model.MainCategories"/>
 <fullyQualifiedTypeName name="com.google.gson.JsonObject"/>
 <fullyQualifiedTypeName name="Model.Categories"/>
-<fullyQualifiedTypeName name="org.json.JSONObject"/>
 <fullyQualifiedTypeName name="Model.kaymu"/>
-<fullyQualifiedTypeName name="org.json.JSONArray"/>
-<fullyQualifiedTypeName name="com.google.gson.JsonArray"/>
 <fullyQualifiedTypeName name="branch.IBrowser"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.MySQLConnection"/>
 <fullyQualifiedTypeName name="Model.khmer24"/>
-<fullyQualifiedTypeName name="org.jsoup.nodes.Document"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.log.Log"/>
 <fullyQualifiedTypeName name="utilities.Logger"/>
 <fullyQualifiedTypeName name="Browser.mybrowser"/>
@@ -44,5 +39,15 @@
 <fullyQualifiedTypeName name="utilities.DatabaseConnection"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="Model.product"/>
+<fullyQualifiedTypeName name="javax.servlet.jsp.tagext.TryCatchFinally"/>
+<fullyQualifiedTypeName name="org.jsoup.nodes.Document"/>
+<fullyQualifiedTypeName name="org.jsoup.Connection"/>
+<fullyQualifiedTypeName name="org.jsoup.Connection.Request"/>
+<fullyQualifiedTypeName name="org.jsoup.Jsoup"/>
+<fullyQualifiedTypeName name="com.google.gson.JsonArray"/>
+<fullyQualifiedTypeName name="org.json.JSONArray"/>
+<fullyQualifiedTypeName name="org.apache.taglibs.standard.tag.common.core.ForEachSupport"/>
+<fullyQualifiedTypeName name="org.json.JSONObject"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
+<fullyQualifiedTypeName name="java.lang.Thread"/>
 </qualifiedTypeNameHistroy>
