@@ -6,7 +6,7 @@
       <class name="Test.TestNG">
         <methods>
           <include name="myBrowser"/>
-          <include name="tabOne"/>
+          <include name="tabTwo"/>
         </methods>
       </class> <!-- Test.TestNG -->
     </classes>

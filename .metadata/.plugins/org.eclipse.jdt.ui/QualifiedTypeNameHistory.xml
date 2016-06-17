@@ -31,8 +31,6 @@
 <fullyQualifiedTypeName name="utilities.Logger"/>
 <fullyQualifiedTypeName name="Browser.mybrowser"/>
 <fullyQualifiedTypeName name="Model.shop168"/>
-<fullyQualifiedTypeName name="org.jsoup.nodes.Element"/>
-<fullyQualifiedTypeName name="org.jsoup.select.Elements"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.PreparedStatement"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.Connection"/>
@@ -40,14 +38,18 @@
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="Model.product"/>
 <fullyQualifiedTypeName name="javax.servlet.jsp.tagext.TryCatchFinally"/>
-<fullyQualifiedTypeName name="org.jsoup.nodes.Document"/>
 <fullyQualifiedTypeName name="org.jsoup.Connection"/>
 <fullyQualifiedTypeName name="org.jsoup.Connection.Request"/>
-<fullyQualifiedTypeName name="org.jsoup.Jsoup"/>
 <fullyQualifiedTypeName name="com.google.gson.JsonArray"/>
 <fullyQualifiedTypeName name="org.json.JSONArray"/>
 <fullyQualifiedTypeName name="org.apache.taglibs.standard.tag.common.core.ForEachSupport"/>
 <fullyQualifiedTypeName name="org.json.JSONObject"/>
 <fullyQualifiedTypeName name="java.lang.Integer"/>
 <fullyQualifiedTypeName name="java.lang.Thread"/>
+<fullyQualifiedTypeName name="org.jsoup.Jsoup"/>
+<fullyQualifiedTypeName name="org.jsoup.nodes.Document"/>
+<fullyQualifiedTypeName name="org.jsoup.select.Elements"/>
+<fullyQualifiedTypeName name="org.jsoup.nodes.Element"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.chrome.ChromeDriver"/>
+<fullyQualifiedTypeName name="org.openqa.selenium.ie.InternetExplorerDriver"/>
 </qualifiedTypeNameHistroy>

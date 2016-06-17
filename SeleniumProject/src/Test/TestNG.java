@@ -30,24 +30,24 @@ import org.testng.annotations.Test;
 
 public class TestNG {
 	private WebDriver web = null;
-
+	private String pagedata = null;
 	@BeforeSuite
 	public void myBrowser() {
 		try {
 			System.out.println("-------------------------Open Browser----------------------");
-			/*System.setProperty("webdriver.ie.driver",
-					"D:\\Documents\\Documents\\Selenium Webdriver with Java Language\\lib\\IEDriverServer.exe");*/
+			System.setProperty("webdriver.ie.driver",
+					"D:\\IEDriverServer_x64_2.45.0\\IEDriverServer.exe");
 			/*ProfilesIni prof=new ProfilesIni();
 			FirefoxProfile profile=prof.getProfile("default");
 			web=new FirefoxDriver(profile);*/
-			web = new FirefoxDriver();
+			web = new InternetExplorerDriver();
 			web.get("http://www.google.com.kh");
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace();
 		}
 	}
-	/*@BeforeClass
+	@BeforeClass
 	public void openTab(){
 		try {
 			System.out.println("************************ New Tab *************************");
@@ -66,20 +66,13 @@ public class TestNG {
 		System.out.println("------------------ URL Navigate Back --------------------");
 	}
 	@Test
-	public void tabOne(){
-		try {
-			web.get("http://www.google.com.kh");
-			System.out.println(web.getTitle());
-		} catch (Exception e) {
-			// TODO: handle exception
-		}
-	}*/
-	/*@Test
 	public void tabTwo(){
 		String title=null;
 		String Source=null;
+		//System.out.println("TabTwo");
 		try {
 			web.get("https://www.facebook.com/kampucheaonlineshop/timeline");
+			//web.get("http://www.google.com.kh");
 			title=web.getTitle();
 			System.out.println(title);
 			System.err.println(web.getCurrentUrl());
@@ -107,16 +100,15 @@ public class TestNG {
 			} catch (IOException ex) {
 			  // report
 			} finally {
-			   try {writer.close();} catch (Exception ex) {ignore}
+			   try {writer.close();} catch (Exception ex) {ex.printStackTrace();}
 			}
 			
-			//System.err.println(web.getPageSource());
-			System.out.println("--------------------");
+			//web.findElement()
 		} catch (Exception e) {
 			// TODO: handle exception
 		}
-	}*/
-	/*@AfterClass
+	}
+	@AfterClass
 	public void closeTab(){
 		try {
 			System.out.println("************************ Close Tab *************************");
@@ -133,6 +125,6 @@ public class TestNG {
 			web =null;
 			System.out.println("************************ Quit Browser *************************");
 		}
-	}*/
+	}
 
 }
