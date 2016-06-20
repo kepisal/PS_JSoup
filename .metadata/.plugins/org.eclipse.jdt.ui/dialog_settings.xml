@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
-	<item value="C:\Users\pisal\Documents\GitHub\PS_JSoup\Libraries" key="org.eclipse.jdt.ui.lastextjar"/>
+	<item value="C:\Users\JAVA\Documents\GitHub\PS_JSoup\Libraries" key="org.eclipse.jdt.ui.lastextjar"/>
 	<section name="GenerateConstructorUsingFieldsSelectionDialog">
 		<item value="false" key="OmitCallToSuper"/>
 	</section>
